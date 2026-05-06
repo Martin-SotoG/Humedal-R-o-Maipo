@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería - Humedal Río Maipo</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<nav>
+    <div class="menu-toggle">☰</div>
+
+    <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="info.html">Investigación</a>
+        <a href="galeria.html">Galería</a>
+        <a href="fuentes.html">Fuentes</a>
+    </div>
+</nav>
+
+<section>
+    <h2>Galería</h2>
+
+    <div class="gallery">
+        <img src="https://www.terram.cl/wp-content/uploads/2015/09/8123398443_de70e6dca3_b.jpg">
+        <img src="https://www.paiscircular.cl/wp-content/uploads/2025/05/IMG_4872-1024x559.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Wetland.jpg">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/styles/16x9_grande/public/image-monumentos/dji_0010.jpg?h=dbcb2112&itok=RD2-ishV">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dji_0043.jpg">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7450.jpg">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7502.jpg">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dji_0003.jpg">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7572.jpg">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7591.jpg">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7571.jpg">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7558.jpg">
+    </div>
+    </div>
+
+</section>
+
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Investigación - Humedal Río Maipo</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<nav>
+    <div class="menu-toggle">☰</div>
+
+    <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="info.html">Investigación</a>
+        <a href="#Biotopo">Biotopo/Biocenosis</a>
+        <a href="#Amenazas">Amenazas</a>
+        <a href="#Conservación">Estado/Medidas de Conservación</a>
+        <a href="#Sustentabilidad">Sustentabilidad</a>
+    </div>
+</nav>
+
+<section id="Biotopo">
+    <h2>Biotopo y Biocenosis</h2>
+    <div class="card">
+        <p>
+        El biotopo del humedal se caracteriza por factores como la humedad, la salinidad y la presencia constante de agua. La biocenosis incluye plantas, aves, peces e insectos que interactúan entre sí, formando redes ecológicas que mantienen el equilibrio del ecosistema.
+        </p>
+    </div>
+</section>
+
+<section id="Amenazas">
+    <h2>Amenazas</h2>
+    <div class="card">
+        <p>
+        El humedal enfrenta amenazas como la contaminación, la expansión urbana y la intervención humana. Estas acciones afectan su biodiversidad y alteran el equilibrio natural del ecosistema.
+        </p>
+    </div>
+</section>
+
+<section id="Conservación">
+    <h2>Estado de Conservación</h2>
+    <div class="card">
+        <p>
+        El Humedal Río Maipo presenta un estado de conservación vulnerable debido a la presión humana, la contaminación y la expansión urbana. Estas condiciones han afectado su biodiversidad y el equilibrio del ecosistema.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Medidas de Conservación</h2>
+    <div class="card">
+        <p>
+        Para proteger el humedal es necesario implementar medidas como la educación ambiental, la regulación de actividades humanas y la protección de las especies que habitan en este ecosistema.
+        </p>
+    </div>
+</section>
+
+<section id="Sustentabilidad">
+    <h2>Sustentabilidad</h2>
+    <div class="card">
+        <p>
+        La sustentabilidad del humedal depende del uso responsable de los recursos naturales, permitiendo que este ecosistema continúe existiendo y cumpliendo sus funciones en el futuro.
+        </p>
+    </div>
+</section>
+
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>

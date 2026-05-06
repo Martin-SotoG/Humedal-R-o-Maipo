@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.png">
+    <title>Humedal Río Maipo</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body id="top">
+
+    <nav>
+    <div class="menu-toggle">☰</div>
+
+    <div class="nav-links">
+        <a href="#top">Inicio</a>
+        <a href="#proyecto">Proyecto</a>
+        <a href="#ecosistema">Ecosistema</a>
+        <a href="#flora">Flora</a>
+        <a href="#fauna">Fauna</a>
+        <a href="info.html">Investigación</a>
+        <a href="galeria.html">Galería</a>
+        <a href="fuentes.html">Fuentes</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="overlay">
+        <h1>Humedal Río Maipo</h1>
+        <p>Un ecosistema clave de la zona central de Chile</p>
+    </div>
+</header>
+
+
+    
+<section id="proyecto"> 
+    <h2>¿Qué es este proyecto?</h2>
+    <div class="card">
+        <p class="type-text" data-text="Este proyecto busca dar a conocer la importancia del Humedal Río Maipo, destacando su biodiversidad y su rol ecológico. Además, se pretende generar conciencia sobre su cuidado frente a las amenazas humanas.">.</p>
+    </div>
+</section>
+
+<section id="ecosistema">
+    <h2>Ecosistema</h2>
+    <div class="card">
+        <p>El Humedal Río Maipo es un ecosistema costero donde interactúan aguas dulces y saladas. Esta mezcla genera condiciones únicas de salinidad y humedad, permitiendo el desarrollo de una alta biodiversidad y el paso de aves migratorias.</p>
+    </div>
+</section>
+
+<section id="flora">
+    <h2>Flora</h2>
+    <div class="card">
+        <p>La flora del humedal está formada por especies adaptadas a suelos húmedos y salinos, como juncos y totoras. Estas plantas cumplen funciones clave como la filtración del agua, la estabilización del suelo y el refugio para otras especies.</p>
+    </div>
+</section>
+
+<section id="fauna">
+    <h2>Fauna</h2>
+    <div class="card">
+        <p>El humedal alberga una gran diversidad de fauna, especialmente aves como la garza cuca, la tagua y el cisne de cuello negro. También habitan peces, insectos y pequeños mamíferos que forman parte de un ecosistema dinámico.</p>
+    </div>
+</section>
+
+<script>
+let lastScroll = 0;
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+
+    if (window.innerWidth <= 768) return; // 👈 clave
+
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+        nav.style.top = "-80px";
+    } else {
+        nav.style.top = "0";
+    }
+
+    lastScroll = currentScroll;
+});
+</script>
+
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+    const textElement = card.querySelector(".type-text");
+
+    if (!textElement) return;
+
+    const fullText = textElement.dataset.text;
+    let interval; // 👈 guardamos el intervalo
+
+    card.addEventListener("mouseenter", () => {
+
+        // 🧹 limpiar intervalo anterior
+        clearInterval(interval);
+
+        textElement.textContent = "";
+        let i = 0;
+
+        interval = setInterval(() => {
+            textElement.textContent += fullText[i];
+            i++;
+
+            if (i >= fullText.length) {
+                clearInterval(interval);
+            }
+        }, 20);
+    });
+});
+</script>
+    
+<footer>
+    <div class="footer-content">
+        <p>© 2026 Humedal Río Maipo | Proyecto educativo</p>
+
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="info.html">Investigación</a>
+            <a href="galeria.html">Galería</a>
+            <a href="fuentes.html">Fuentes</a>
+            <a href="descargo.html">Descargo</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
