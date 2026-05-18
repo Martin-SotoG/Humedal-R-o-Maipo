@@ -47,25 +47,24 @@
 </div>
     
 <script>
-const imagenesGaleria = document.querySelectorAll(".gallery img");
 const visor = document.getElementById("visor");
 const imagenAmpliada = document.getElementById("imagen-ampliada");
 const cerrar = document.querySelector(".cerrar");
 
 imagenesGaleria.forEach(imagen => {
     imagen.addEventListener("click", () => {
-        visor.style.display = "flex";
         imagenAmpliada.src = imagen.src;
+        visor.classList.add("activo");
     });
 });
 
 cerrar.addEventListener("click", () => {
-    visor.style.display = "none";
+    visor.classList.remove("activo");
 });
 
 visor.addEventListener("click", (e) => {
     if (e.target === visor) {
-        visor.style.display = "none";
+        visor.classList.remove("activo");
     }
 });
     
