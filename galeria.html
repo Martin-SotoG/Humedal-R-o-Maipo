@@ -42,8 +42,35 @@
 
 </section>
 
+<div id="visor" class="visor">
+    <span class="cerrar">&times;</span>
+    <img id="imagen-ampliada" src="" alt="Imagen ampliada">
+</div>
+    
 <script>
-const toggle = document.querySelector(".menu-toggle");
+const imagenesGaleria = document.querySelectorAll(".gallery img");
+const visor = document.getElementById("visor");
+const imagenAmpliada = document.getElementById("imagen-ampliada");
+const cerrar = document.querySelector(".cerrar");
+
+imagenesGaleria.forEach(imagen => {
+    imagen.addEventListener("click", () => {
+        visor.style.display = "flex";
+        imagenAmpliada.src = imagen.src;
+    });
+});
+
+cerrar.addEventListener("click", () => {
+    visor.style.display = "none";
+});
+
+visor.addEventListener("click", (e) => {
+    if (e.target === visor) {
+        visor.style.display = "none";
+    }
+});
+    
+    const toggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
 toggle.addEventListener("click", () => {
