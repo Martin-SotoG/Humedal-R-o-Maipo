@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería - Humedal Río Maipo</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<nav>
+    <div class="menu-toggle">☰</div>
+
+    <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="info.html">Investigación</a>
+        <a href="galeria.html">Galería</a>
+        <a href="fuentes.html">Fuentes</a>
+    </div>
+</nav>
+
+<section>
+    <h2>Galería</h2>
+
+    <div class="gallery">
+        <img src="https://www.terram.cl/wp-content/uploads/2015/09/8123398443_de70e6dca3_b.jpg" alt="Vista del Humedal Río Maipo">
+        <img src="https://www.paiscircular.cl/wp-content/uploads/2025/05/IMG_4872-1024x559.jpg" alt="Humedal Río Maipo y su biodiversidad">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Wetland.jpg" alt="Paisaje de humedal">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/styles/16x9_grande/public/image-monumentos/dji_0010.jpg?h=dbcb2112&itok=RD2-ishV" alt="Vista aérea del Santuario Humedal Río Maipo">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dji_0043.jpg" alt="Sector del Humedal Río Maipo">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7450.jpg" alt="Aves en el Humedal Río Maipo">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7502.jpg" alt="Ave en el Humedal Río Maipo">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dji_0003.jpg" alt="Vista aérea del humedal">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7572.jpg" alt="Grupo de aves en el humedal">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7591.jpg" alt="Flora del Humedal Río Maipo">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7571.jpg" alt="Aves en zona húmeda del humedal">
+        <img src="https://www.monumentos.gob.cl/sites/default/files/image-monumentos/dscn7558.jpg" alt="Sendero del Humedal Río Maipo">
+    </div>
+</section>
+
+<!-- Visor de imágenes: estilos críticos inline para que NO dependa del CSS externo -->
+<div id="visor" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:2147483647; background:rgba(0,0,0,0.88); justify-content:center; align-items:center; padding:20px; box-sizing:border-box;">
+    <span id="cerrar-visor" style="position:absolute; top:18px; right:35px; color:white; font-size:44px; line-height:1; cursor:pointer; z-index:2147483647;">&times;</span>
+    <img id="imagen-ampliada" src="" alt="Imagen ampliada" style="max-width:90vw; max-height:82vh; border-radius:15px; object-fit:contain; box-shadow:0 0 28px rgba(255,255,255,0.35);">
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>© 2026 Humedal Río Maipo | Proyecto educativo</p>
+
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="info.html">Investigación</a>
+            <a href="galeria.html">Galería</a>
+            <a href="fuentes.html">Fuentes</a>
+            <a href="descargo.html">Descargo</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (toggle && navLinks) {
+    toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+}
+
+const imagenesGaleria = document.querySelectorAll(".gallery img");
+const visor = document.getElementById("visor");
+const imagenAmpliada = document.getElementById("imagen-ampliada");
+const cerrarVisorBoton = document.getElementById("cerrar-visor");
+
+function abrirVisor(imagen) {
+    imagenAmpliada.src = imagen.src;
+    imagenAmpliada.alt = imagen.alt || "Imagen ampliada";
+
+    // Reforzamos los estilos con JS por si algún CSS externo intenta pisarlos.
+    visor.style.display = "flex";
+    visor.style.position = "fixed";
+    visor.style.top = "0";
+    visor.style.left = "0";
+    visor.style.width = "100vw";
+    visor.style.height = "100vh";
+    visor.style.zIndex = "2147483647";
+
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarVisor() {
+    visor.style.display = "none";
+    imagenAmpliada.src = "";
+    document.body.style.overflow = "";
+}
+
+imagenesGaleria.forEach(imagen => {
+    imagen.style.cursor = "pointer";
+    imagen.addEventListener("click", () => abrirVisor(imagen));
+});
+
+cerrarVisorBoton.addEventListener("click", cerrarVisor);
+
+visor.addEventListener("click", (evento) => {
+    if (evento.target === visor) {
+        cerrarVisor();
+    }
+});
+
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape" && visor.style.display === "flex") {
+        cerrarVisor();
+    }
+});
+</script>
+
+</body>
+</html>
