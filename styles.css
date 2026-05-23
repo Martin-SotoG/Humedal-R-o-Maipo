@@ -352,20 +352,20 @@ html {
 body { overflow-x: hidden; }
 
 /* === Amenazas desplegables: ajuste final === */
-.card.amenaza-card {
+.card.reveal-card {
     cursor: pointer;
     overflow: hidden;
     min-height: 65px;
 }
 
-.card.amenaza-card > h3 {
+.card.reveal-card > h3 {
     color: #1b5e20;
     font-size: 24px;
     margin: 0;
     transition: color 0.3s ease;
 }
 
-.card.amenaza-card > p {
+.card.reveal-card > p {
     max-height: 0 !important;
     opacity: 0 !important;
     overflow: hidden !important;
@@ -375,15 +375,15 @@ body { overflow-x: hidden; }
 }
 
 /* En PC aparece al pasar el mouse; en celular también puede aparecer al tocar la card */
-.card.amenaza-card:hover > p,
-.card.amenaza-card:focus-within > p {
+.card.reveal-card:hover > p,
+.card.reveal-card:focus-within > p {
     max-height: 500px !important;
     opacity: 1 !important;
     margin-top: 18px !important;
 }
 
-.card.amenaza-card:hover,
-.card.amenaza-card:focus-within {
+.card.reveal-card:hover,
+.card.reveal-card:focus-within {
     transform: translateY(-8px);
     box-shadow:
         0px 10px 30px rgba(0,0,0,0.35),
