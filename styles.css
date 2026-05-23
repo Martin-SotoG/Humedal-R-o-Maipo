@@ -185,19 +185,19 @@ section {
     animation: aparecer 0.8s ease forwards;
 }
 
-.amenaza-card {
+.card.reveal-card {
     cursor: pointer;
     overflow: hidden;
 }
 
-.amenaza-card h3 {
+.card.reveal-card h3 {
     color: #1b5e20;
     font-size: 24px;
     margin: 0;
     transition: color 0.3s ease;
 }
 
-.amenaza-card p {
+.card.reveal-card p {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -205,7 +205,7 @@ section {
     transition: max-height 0.5s ease, opacity 0.4s ease, margin-top 0.4s ease;
 }
 
-.amenaza-card:hover p {
+.card.reveal-card:hover p {
     max-height: 300px;
     opacity: 1;
     margin-top: 15px;
